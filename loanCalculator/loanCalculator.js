@@ -2,6 +2,7 @@ const MESSAGES = require('./loan_calculator_messages.json');
 const READLINE = require('readline-sync');
 let language = "en";
 
+//function to choose which language the program runs in
 function chooseLanguage() {
   prompt("languageChoice");
   let choiceOfLanguage = READLINE.question();
@@ -12,6 +13,7 @@ function chooseLanguage() {
   language = choiceOfLanguage;
 }
 
+//if language choice is invalid
 function invalidLanguage(languageChoice) {
   return languageChoice === "pt" || languageChoice === "en";
 }
@@ -19,6 +21,7 @@ function invalidLanguage(languageChoice) {
 function messages(message, lang = "en") {
   return MESSAGES[lang][message];
 }
+
 
 function prompt(key, variable = "") {
   let message = messages(key, language);
@@ -41,29 +44,9 @@ function chooseNumber() {
   return number;
 }
 
-//calculator
-prompt("welcome");
-prompt("emptyLine");
-chooseLanguage();
-
-while (true) {
-  console.clear();
-  displayCalculation(runCalculator());
-
-  prompt("anotherCalculation");
-  let answer = READLINE.question().toLowerCase();
-  while (answer[0] !== 'n' && answer[0] !== 'y' && answer[0] !== 's') {
-    prompt('yOrN');
-    answer = READLINE.question().toLowerCase();
-  }
-  if (answer[0] === 'n') {
-    prompt("goodbye");
-    break;
-  }
-}
-
 function runCalculator() {
   prompt("emptyLine");
+  //prompts to get values
   prompt("loanAmount");
   let loanAmount = Number(chooseNumber());
 
@@ -87,4 +70,26 @@ function calculateLoan(loanTotal, interestRate, duration) {
 
 function displayCalculation(calculation) {
   return prompt("monthlyPayment", calculation.toFixed(2));
+}
+
+//calculator run loop
+prompt("welcome");
+prompt("emptyLine");
+chooseLanguage();
+
+while (true) {
+  //clear console and then run calculator
+  console.clear();
+  displayCalculation(runCalculator());
+
+  prompt("anotherCalculation");
+  let answer = READLINE.question().toLowerCase();
+  while (answer[0] !== 'n' && answer[0] !== 'y' && answer[0] !== 's') {
+    prompt('yOrN');
+    answer = READLINE.question().toLowerCase();
+  }
+  if (answer[0] === 'n') {
+    prompt("goodbye");
+    break;
+  }
 }
