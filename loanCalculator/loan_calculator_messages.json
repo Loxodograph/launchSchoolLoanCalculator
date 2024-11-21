@@ -1,6 +1,13 @@
 {
   "en": {
     "welcome": "Welcome to Loan Calculator",
-    "loanAmount": "Please enter the total loan amount"
+    "emptyLine": "-----------------------",
+    "languageChoice":"Choose your language. en/pt",
+    "invalidLanguage": "Choose en or pt",
+    "loanAmount": "Please enter the total loan amount",
+    "monthlyInterestRate": "Please enter the monthly interest rate. example: Enter 5 for 5%",
+    "loanDuration": "Please enter loan duration in years.",
+    "monthlyPayment": "Your monthly payment is: ",
+    "invalidNumber": "Invalid number. Please choose an value in dollars greater than 0."
   }
 }
