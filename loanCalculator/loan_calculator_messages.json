@@ -8,6 +8,23 @@
     "monthlyInterestRate": "Please enter the monthly interest rate. example: Enter 5 for 5%",
     "loanDuration": "Please enter loan duration in years.",
     "monthlyPayment": "Your monthly payment is: ",
-    "invalidNumber": "Invalid number. Please choose an value in dollars greater than 0."
+    "invalidNumber": "Invalid number. Please choose an value in dollars greater than 0.",
+    "anotherCalculation": "Would you like to compute another calculation? Y/N",
+    "yOrN": "Please enter 'y' or 'n'.",
+    "goodbye": "Thank you, goodbye!"
+  },
+  "pt": {
+    "welcome": "Bem-vindo à Calculadora de Empréstimos",
+    "emptyLine": "-----------------------",
+    "languageChoice":"Escolha seu idioma. en/pt",
+    "invalidLanguage": "Escolha 'en' ou 'pt'",
+    "loanAmount": "Favor digitar o valor total do empréstimo",
+    "monthlyInterestRate": "Favor digitar a taxa de juros mensal. Exemplo: Digite 5 para 5%",
+    "loanDuration": "Favor digitar a duração do empréstimo em anos.",
+    "monthlyPayment": "Seu pagamento mensal é: ",
+    "invalidNumber": "Número inválido. Escolha um valor em reais maior que 0.",
+    "anotherCalculation": "Você gostaria de computar outro cálculo? S/N",
+    "yOrN": "Favor digitar 'y' ou 'n'.",
+    "goodbye": "Obrigado, adeus!"
   }
 }

@@ -45,9 +45,25 @@ function chooseNumber() {
 prompt("welcome");
 prompt("emptyLine");
 chooseLanguage();
-displayCalculation(runCalculator());
+
+while (true) {
+  console.clear();
+  displayCalculation(runCalculator());
+
+  prompt("anotherCalculation");
+  let answer = READLINE.question().toLowerCase();
+  while (answer[0] !== 'n' && answer[0] !== 'y' && answer[0] !== 's') {
+    prompt('yOrN');
+    answer = READLINE.question().toLowerCase();
+  }
+  if (answer[0] === 'n') {
+    prompt("goodbye");
+    break;
+  }
+}
 
 function runCalculator() {
+  prompt("emptyLine");
   prompt("loanAmount");
   let loanAmount = Number(chooseNumber());
 
