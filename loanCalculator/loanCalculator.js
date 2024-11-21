@@ -1,0 +1,1 @@
+const MESSAGES = require('./loan_calculator_messages.json');
