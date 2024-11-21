@@ -9,7 +9,7 @@
     "loanDuration": "Please enter loan duration in years.",
     "monthlyPayment": "Your monthly payment is: ",
     "invalidNumber": "Invalid number. Please choose an value in dollars greater than 0.",
-    "anotherCalculation": "Would you like to compute another calculation? Y/N",
+    "anotherCalculation": "Would you like to compute another calculation? y/n",
     "yOrN": "Please enter 'y' or 'n'.",
     "goodbye": "Thank you, goodbye!"
   },
@@ -23,7 +23,7 @@
     "loanDuration": "Favor digitar a duração do empréstimo em anos.",
     "monthlyPayment": "Seu pagamento mensal é: ",
     "invalidNumber": "Número inválido. Escolha um valor em reais maior que 0.",
-    "anotherCalculation": "Você gostaria de computar outro cálculo? S/N",
+    "anotherCalculation": "Você gostaria de computar outro cálculo? s/n",
     "yOrN": "Favor digitar 'y' ou 'n'.",
     "goodbye": "Obrigado, adeus!"
   }
