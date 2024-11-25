@@ -1,5 +1,7 @@
 const MESSAGES = require('./loan_calculator_messages.json');
 const READLINE = require('readline-sync');
+const CONTINUE_RESPONSES = ['yes', 'no', 'y', 'n', 'sim', 'não', 's', 'n'];
+const ALLOWED_LANGUAGES = ['en', 'pt'];
 let language = "en";
 
 //function to choose which language the program runs in
@@ -9,13 +11,14 @@ function chooseLanguage() {
   while (!invalidLanguage(choiceOfLanguage)) {
     prompt("invalidLanguage");
     choiceOfLanguage = READLINE.question();
+    console.clear();
   }
   language = choiceOfLanguage;
 }
 
 //if language choice is invalid
 function invalidLanguage(languageChoice) {
-  return languageChoice === "pt" || languageChoice === "en";
+  return ALLOWED_LANGUAGES.includes(languageChoice);
 }
 
 function messages(message, lang = "en") {
@@ -31,7 +34,7 @@ function prompt(key, variable = "") {
 function invalidNumber(number) {
   return number.trimStart() === "" ||
    Number.isNaN(Number(number)) ||
-   Number(number) < 0;
+   Number(number) <= 0;
 }
 
 function chooseNumber() {
@@ -40,6 +43,7 @@ function chooseNumber() {
   while (invalidNumber(number)) {
     prompt("invalidNumber");
     number = READLINE.question();
+    console.clear();
   }
   return number;
 }
@@ -56,39 +60,45 @@ function runCalculator() {
   prompt("loanDuration");
   let loanDuration = Number(chooseNumber(), 10) * 12;
 
-  let monthlyPaymentDue = calculateLoan(
+  let monthlyPaymentDue = calculateMonthlyPayment(
     loanAmount, monthlyInterestRate, loanDuration);
 
-  return monthlyPaymentDue;
+  displayCalculation(monthlyPaymentDue);
 }
 
-function calculateLoan(loanTotal, interestRate, duration) {
+function calculateMonthlyPayment(loanTotal, interestRate, duration) {
   let monthlyPayment = loanTotal *
   (interestRate / (1 - Math.pow((1 + interestRate), (-duration))));
   return monthlyPayment;
 }
 
 function displayCalculation(calculation) {
-  return prompt("monthlyPayment", calculation.toFixed(2));
+  prompt("monthlyPayment", calculation.toFixed(2));
+}
+
+function performAnotherCalculation() {
+  let answer = READLINE.question().toLowerCase();
+  while (!CONTINUE_RESPONSES.includes(answer.toLowerCase())) {
+    prompt('yOrN');
+    answer = READLINE.question().toLowerCase();
+  }
+  if ((CONTINUE_RESPONSES.indexOf(answer.toLowerCase()) % 2) > 0) {
+    return false;
+  }
+  return true;
 }
 
 //calculator run loop
 prompt("welcome");
 prompt("emptyLine");
 chooseLanguage();
-
 while (true) {
   //clear console and then run calculator
   console.clear();
-  displayCalculation(runCalculator());
+  runCalculator();
 
   prompt("anotherCalculation");
-  let answer = READLINE.question().toLowerCase();
-  while (answer[0] !== 'n' && answer[0] !== 'y' && answer[0] !== 's') {
-    prompt('yOrN');
-    answer = READLINE.question().toLowerCase();
-  }
-  if (answer[0] === 'n') {
+  if (!performAnotherCalculation()) {
     prompt("goodbye");
     break;
   }

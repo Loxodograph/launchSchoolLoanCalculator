@@ -8,7 +8,7 @@
     "monthlyInterestRate": "Please enter the monthly interest rate. example: Enter 5 for 5%",
     "loanDuration": "Please enter loan duration in years.",
     "monthlyPayment": "Your monthly payment is: ",
-    "invalidNumber": "Invalid number. Please choose an value in dollars greater than 0.",
+    "invalidNumber": "Invalid number. Please choose number greater than 0.",
     "anotherCalculation": "Would you like to compute another calculation? y/n",
     "yOrN": "Please enter 'y' or 'n'.",
     "goodbye": "Thank you, goodbye!"
@@ -22,9 +22,9 @@
     "monthlyInterestRate": "Favor digitar a taxa de juros mensal. Exemplo: Digite 5 para 5%",
     "loanDuration": "Favor digitar a duração do empréstimo em anos.",
     "monthlyPayment": "Seu pagamento mensal é: ",
-    "invalidNumber": "Número inválido. Escolha um valor em reais maior que 0.",
+    "invalidNumber": "Número inválido. Escolha um número maior que 0.",
     "anotherCalculation": "Você gostaria de computar outro cálculo? s/n",
-    "yOrN": "Favor digitar 'y' ou 'n'.",
+    "yOrN": "Favor digitar 's' ou 'n'.",
     "goodbye": "Obrigado, adeus!"
   }
 }
